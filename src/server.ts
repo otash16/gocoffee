@@ -1,1 +1,2 @@
-import moment from "moment";
+import dotenv from "dotenv";
+dotenv.config();
