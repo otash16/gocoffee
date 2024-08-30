@@ -1,17 +1,10 @@
-import express, {Request, Response} from "express";
+import express from "express";
 const router = express.Router();
+import memberController from "./controllers/member.controller";
+router.get("/", memberController.goHome);
 
+router.get("/login", memberController.getLogin);
 
-router.get("/",(req: Request, res: Response) => {
-    res.send("Home");
-});
-
-router.get("/login",(req: Request, res: Response) => {
-    res.send("Login");
-})
-
-router.get("/signup",(req: Request, res: Response) => {
-    res.send("Signup");
-});
+router.get("/signup", memberController.getSignup);
 
 export default router;
