@@ -9,6 +9,7 @@ export enum HttpCode {
     INTERNAL_SERVER_ERROR 
 }    
 
+
 export enum Message {
     SOMETHING_WENT_WRONG = "Something went wrong!",
     NO_DATA_FOUND = "No data is found!",
@@ -22,3 +23,17 @@ export enum Message {
     WRONG_PASSWORD = "Wrong password, please, try again!",
     NOT_AUTHENTICATED = "You are not authenticated, Please login first",
 }
+
+
+class Errors extends Error {
+     public code: HttpCode;
+     public message: Message;
+
+     constructor(statusCode: HttpCode, statusMessage: Message){
+        super();
+        this.code = statusCode;
+        this.message = statusMessage;
+     }
+}
+
+export default Errors;
