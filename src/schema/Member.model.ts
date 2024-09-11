@@ -1,5 +1,5 @@
 import mongoose, {Schema} from "mongoose";
-import { MemberSratus } from "../libs/enums/member.enum";
+import { MemberStatus } from "../libs/enums/member.enum";
 import { MemberType } from "../libs/enums/member.enum";
 
 const memberSchema = new Schema({
@@ -11,7 +11,7 @@ const memberSchema = new Schema({
 
     memberStatus: {
         type: String,
-        enum: MemberSratus,
+        enum: MemberStatus,
     },
 
     memberNick: {
